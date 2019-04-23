@@ -618,7 +618,7 @@ def load_embedding_matrix ():
   try:
     word2idx = load_dict ('word2idx.json')
 
-    embedding_matrix = np.load(DICT_PATH + timestr + 'embedding_matrix.npy')
+    embedding_matrix = np.load(DICT_PATH + 'embedding_matrix.npy')
     if (embedding_matrix.shape[0] != len (word2idx)):
         raise # the embedding matrix might have been loaded for some other dataset 
   except:
@@ -650,6 +650,6 @@ def load_embedding_matrix ():
     print ("Embedding matrix created.\n")
     
     # save it for future purpose
-    np.save(DICT_PATH + timestr  + 'embedding_matrix', embedding_matrix)  
+    np.save(DICT_PATH +  'embedding_matrix', embedding_matrix)  
 
   return embedding_matrix
